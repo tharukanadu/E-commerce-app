@@ -10,6 +10,8 @@ import { product } from '../product-view/productmodel';
 })
 export class ProductDetailComponent implements OnInit{
   productdata:any|product;
+  showadd:boolean =true;
+  showremove:boolean =false;
   constructor(private api:ApiService,private activatedroute:ActivatedRoute){}
 ngOnInit(): void {
   let productid=this.activatedroute.snapshot.paramMap.get('productid');
@@ -17,5 +19,15 @@ ngOnInit(): void {
   productid && this.api.getproductbyid(productid).subscribe((res)=>{
     this.productdata=res;
   })
+}
+addtocart(productdata:product){
+ this.showadd=false;
+ this.showremove=true;
+ this.api.addtocart(productdata)
+}
+removeItem(productdata:product){
+  this.showadd=true;
+  this.showremove=false;
+  this.api.removecartitem(productdata);
 }
 }

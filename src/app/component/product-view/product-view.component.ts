@@ -19,4 +19,10 @@ displayproducts(){
     console.log(res);
   })
 }
+addtocart(item:product){
+this.api.addtocart(item);
+}
+removeitem(item:product){
+this.api.removecartitem(item);
+}
 }
