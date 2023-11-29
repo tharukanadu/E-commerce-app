@@ -1,0 +1,59 @@
+<ng-container *ngIf="showproduct.length !=0">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9">
+
+       
+        <h1>Cart Itemes</h1>
+        <table class="table table-dark mt-3 table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Catagory</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of showproduct">
+                <td><img style="width: 120px;" src="{{item.images[0]}}"> </td>
+                <td>{{item.title}}</td>
+                <td>{{item.category}}</td>
+                <td>${{item.price}}</td>
+                <td><button class="btn btn-danger" (click)="deleteitem(item)">Delete </button></td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+    <!-- total section -->
+    <div class="col-sm-3">
+      <h1>Total Amount</h1>
+      <strong style="font-size: 30px;color: green;">${{totalamount}}</strong><br/>
+      <div class="btn-group mt-3">
+        <button class="btn btn-primary">Checkout</button>&nbsp;
+        <button (click)="Empty()" class="btn btn-secondary">Empty cart</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</ng-container>
+
+
+<!-- empty-cart -->
+<ng-container *ngIf="showproduct ==0">
+  <div class="card">
+    <div class="conter">
+      <h4>Your Card Is Empty</h4>
+      <h6>Please Add Item</h6>
+      <button routerLink="/" class="btn btn-dark">Show now</button>
+    </div>
+  </div>
+</ng-container>
+
+
+

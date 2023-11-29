@@ -34,4 +34,17 @@ export class ApiService {
     })
     this.productlist.next(this.cartitemlist);
   }
+  // total calculation
+  calculateprice(){
+    let total=0;
+    this.cartitemlist.map((a:any)=>{
+      total+=a.price;
+    })
+    return total;
+  }
+  // remove all item
+  removeallitems(){
+    this.cartitemlist= [];
+    this.productlist.next(this.cartitemlist);
+  }
 }
