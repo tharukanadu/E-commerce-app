@@ -12,3 +12,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ![Screenshot 2023-11-29 113042](https://github.com/tharukanadu/E-commerce-app/assets/91652221/f7956cdb-9962-4e66-86f9-308eb0df3a91)
 ![Screenshot 2023-11-29 113151](https://github.com/tharukanadu/E-commerce-app/assets/91652221/a365b9dd-f026-49fa-a9d9-408a3529bd88)
+
+click here : https://65dd805038c9348a1a5ea302--imaginative-kringle-da3447.netlify.app/
